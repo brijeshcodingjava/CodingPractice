@@ -129,6 +129,7 @@ public class MaxSubArray {
 	{
 		MaxSubArray obj = new MaxSubArray();
 		//obj.perform( new int[]{13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7 } );
-		obj.perform( new int[]{-13, -3, 25, -29, -3, 16, -2, -18, 2, 2, -7, 12, -5, -22, 150, -4, 7 } );
+		//obj.perform( new int[]{-13, -3, 25, -29, -3, 16, -2, -18, 2, 2, -7, 12, -5, -22, 150, -4, 7 } );
+		obj.perform( new int[]{ -3, -29, -3, -2, -18, -7, -5, -22, -4 } );
 	}
 }
