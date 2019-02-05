@@ -87,6 +87,6 @@ public class MergeSort {
 		MergeSort obj = new MergeSort();
 		//obj.doMergeSort(new int[] {5, 2, 4, 7, 1, 3, 9, 2, 6} );//( new int[]{5, 2, 4, 7, 1, 3, 9, 2, 6} );5, 7, 2, 9, 1, 3, 8, 4
 		//obj.doMergeSort(new int[] {5, 2, 7, 4, 3, 1, 9, 2, 8} );
-		obj.doMergeSort(new int[] { 9,8,7,6,5,1,2,3,4} );
+		obj.doMergeSort(new int[] { 5, 7, 2, 9, 31, 41, 59, 26, 41, 58, 1, 3, 8, 4 } );
 	}
 }

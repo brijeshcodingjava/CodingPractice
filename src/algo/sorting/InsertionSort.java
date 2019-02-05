@@ -1,5 +1,7 @@
 package algo.sorting;
 
+import java.util.Arrays;
+
 /**
  * 
  * In this sorting algorithm, we are taking each element in sequence and comparing with prior elements.
@@ -11,65 +13,28 @@ public class InsertionSort {
 
 	public int[] doInsertionSort( int[] array )
 	{
-		int[] result = null;
-		int key = 0;
-		int i = 0;
-		
-		for( int j = 1; j < array.length; j++ )
+		for( int i = 1; i < array.length; i++ )
 		{
-			key = array[j];
-			i = j - 1;
-			
-			while( i >= 0 && array[i] > key )
+			for( int j = i -1; j >= 0; j-- )
 			{
-				array[i+1] = array[i];
-				i = i - 1;
+				if( array[i] < array[j] )
+				{
+					int temp = array[j];
+					array[j] = array[i];
+					array[i] = temp;
+					i--;
+				}
 			}
-			
-			array[ i + 1 ] = key;
 		}
-		
-		for( int num : array ) System.out.print( num + " " );
-		
-		return array;
-	}
-	
-	public int[] doInsertionSortRecursion( int[] array )
-	{
-		int key = 0;
-		
-		for( int j = 1; j < array.length; j++ )
-		{
-			key = array[j];
-			
-			sort( array, key, j-1 );
-		}
-		
-		for( int num : array ) System.out.print( num + " " );
-		return array;
-	}
-	
-	public int[] sort( int[] array, int key, int start )
-	{
-		
-		if( start >= 0 && array[start] > key )
-		{
-			array[start+1] = array[start];
-			array[start] = key;
-			
-			start = start - 1;
-			sort( array, key, start );
-		}
-		
-		array[ start + 1 ] = key;
-		
 		return array;
 	}
 	
 	public static void main( String ...args )
 	{
 		InsertionSort obj = new InsertionSort();
-		obj.doInsertionSortRecursion( new int[] {31, 41, 59, 26, 41, 58} ); //   5, 2, 4, 6, 1, 3
+		//obj.doInsertionSortRecursion( new int[] {31, 41, 59, 26, 41, 58} ); //   5, 2, 4, 6, 1, 3
+		int[] array = obj.doInsertionSort( new int[] {31, 41, 59, 26, 41, 58} ); //   5, 2, 4, 6, 1, 3
 		
+		Arrays.stream(array).forEach( num -> System.out.print( num + " " ));
 	}
 }
